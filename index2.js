@@ -24,7 +24,7 @@ const predict = async (text) => {
 }
 
 const evaluatePrediction = (p) => {
-    if (p === true) return `<p class="text-danger"><strong>positive</strong></p>"`;
+    if (p === true) return `<p class="text-danger"><strong>positive</strong></p>`;
     if (p === false) return `<p class="text-success">negative</p>`;
     return "null";
 }
