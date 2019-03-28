@@ -52,14 +52,16 @@ $(function () {
         const text = document.getElementById("text").value;
 
         if (text !== "") {
-            document.getElementById("btn-submit").className = "invisible";
-            document.getElementById("btn-loading").className = "btn btn-primary";
-            document.getElementById("table").className = "invisible";
-            prediction = await predict(text);
+            $("#btn-submit").hide();
+            $("#btn-loading").attr("class", "btn btn-primary");
+            $("#btn-loading").show();
+            $("#table").hide();
+            const prediction = await predict(text);
             addPredictionToTable(prediction);
-            document.getElementById("table").className = "table";
-            document.getElementById("btn-submit").className = "btn btn-primary";
-            document.getElementById("btn-loading").className = "invisible";
+            $("#table").attr("class", "table");
+            $("#table").show();
+            $("#btn-loading").hide();
+            $("#btn-submit").show();
 
         }
 
